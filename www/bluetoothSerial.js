@@ -1,10 +1,10 @@
 /*global cordova*/
 module.exports = {
 
-    connect: function (macAddress, success, failure) {
-        window.alert("TRY CONNECT");
-		cordova.exec(success, failure, "BluetoothSerial", "connect", [macAddress]);
-		window.alert("CONNECT");
+    connect: function (macAddress) {
+        //window.alert("TRY CONNECT");
+		cordova.exec(echoSuccess, echoFailure, "BluetoothSerial", "connect", [macAddress]);
+		//window.alert("CONNECT");
     },
 
     // Android only - see http://goo.gl/1mFjZY
@@ -147,3 +147,12 @@ var stringToArrayBuffer = function(str) {
     }
     return ret.buffer;
 };
+
+function echoSuccess(data){
+		window.alert("OK : " + data)
+	}
+
+
+function echoFailure(data){
+		window.alert("KO : " + data)
+	}
