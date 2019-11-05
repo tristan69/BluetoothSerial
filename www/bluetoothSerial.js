@@ -12,17 +12,13 @@ module.exports = {
         cordova.exec(success, failure, "BluetoothSerial", "connectInsecure", [macAddress]);
     },
 
-    disconnect: function (success, failure) {
-		window.alert("TRY DISCONNECT");
-        cordova.exec(success, failure, "BluetoothSerial", "disconnect", []);
-		window.alert("DISCONNECT");
+    disconnect: function () {
+        cordova.exec(echoSuccess, echoFailure, "BluetoothSerial", "disconnect", []);
     },
 
     // list bound devices
-    list: function (success, failure) {
-		window.alert("TRY LIST");
-        cordova.exec(success, failure, "BluetoothSerial", "list", []);
-		window.alert("LIST");
+    list: function () {
+        cordova.exec(echoSuccess, echoFailure, "BluetoothSerial", "list", []);
     },
 
     isEnabled: function (success, failure) {
