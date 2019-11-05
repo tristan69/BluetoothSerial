@@ -3,6 +3,7 @@ module.exports = {
 
     connect: function (macAddress, success, failure) {
         cordova.exec(success, failure, "BluetoothSerial", "connect", [macAddress]);
+		window.alert("CONNECT");
     },
 
     // Android only - see http://goo.gl/1mFjZY
@@ -12,11 +13,13 @@ module.exports = {
 
     disconnect: function (success, failure) {
         cordova.exec(success, failure, "BluetoothSerial", "disconnect", []);
+		window.alert("DISCONNECT");
     },
 
     // list bound devices
     list: function (success, failure) {
         cordova.exec(success, failure, "BluetoothSerial", "list", []);
+		window.alert("LIST");
     },
 
     isEnabled: function (success, failure) {
